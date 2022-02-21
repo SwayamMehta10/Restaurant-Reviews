@@ -23,7 +23,7 @@ export default class RestaurantsDAO {
         let query
         if(filters) {
             if ("name" in filters) {
-                query = { $text: { $search: filters["name"] } }
+                query = { $text: { $search: filters["name"] } }     // Go to MongoDB Atlas, in the "restaurants" collection, create an index and change the fields option to { "name": "text", }
             }
             else if ("cuisine" in filters) {
                 query = { "cuisine": { $eq: filters["cuisine"] } }
